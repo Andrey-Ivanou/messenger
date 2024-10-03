@@ -1,5 +1,7 @@
 package by.it_academy.jd2._107.storage.entity;
 
+import by.it_academy.jd2._107.dto.Role;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -16,18 +18,18 @@ public class EntityUser {
 
     private LocalDateTime createAt;
 
-    private String userOrAdmin;
+    private Role role;
 
     public EntityUser() {
     }
 
-    public EntityUser(String login, String password, String fullName, LocalDate dateOfBirth, LocalDateTime createAt, String userOrAdmin) {
+    public EntityUser(String login, String password, String fullName, LocalDate dateOfBirth, LocalDateTime createAt, String role) {
         this.login = login;
         this.password = password;
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
         this.createAt = createAt;
-        this.userOrAdmin = userOrAdmin;
+        this.role = Role.valueOf(role);
     }
 
     public String getLogin() {
@@ -70,12 +72,12 @@ public class EntityUser {
         this.createAt = createAt;
     }
 
-    public String getUserOrAdmin() {
-        return userOrAdmin;
+    public Role getRole() {
+        return role;
     }
 
-    public void setUserOrAdmin(String userOrAdmin) {
-        this.userOrAdmin = userOrAdmin;
+    public void setRole(Role role) {
+        this.role = Role.valueOf(String.valueOf(role));
     }
 
     @Override
@@ -83,12 +85,12 @@ public class EntityUser {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         EntityUser that = (EntityUser) o;
-        return Objects.equals(login, that.login) && Objects.equals(password, that.password) && Objects.equals(fullName, that.fullName) && Objects.equals(dateOfBirth, that.dateOfBirth) && Objects.equals(createAt, that.createAt) && Objects.equals(userOrAdmin, that.userOrAdmin);
+        return Objects.equals(login, that.login) && Objects.equals(password, that.password) && Objects.equals(fullName, that.fullName) && Objects.equals(dateOfBirth, that.dateOfBirth) && Objects.equals(createAt, that.createAt) && role == that.role;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(login, password, fullName, dateOfBirth, createAt, userOrAdmin);
+        return Objects.hash(login, password, fullName, dateOfBirth, createAt, role);
     }
 
     @Override
@@ -99,7 +101,7 @@ public class EntityUser {
                 ", fullName='" + fullName + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
                 ", createAt=" + createAt +
-                ", userOrAdmin='" + userOrAdmin + '\'' +
+                ", role=" + role +
                 '}';
     }
 }

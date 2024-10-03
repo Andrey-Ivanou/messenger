@@ -1,5 +1,6 @@
 package by.it_academy.jd2._107.storage;
 
+import by.it_academy.jd2._107.dto.Role;
 import by.it_academy.jd2._107.storage.api.IConnectionManager;
 import by.it_academy.jd2._107.storage.api.IUserStorage;
 import by.it_academy.jd2._107.storage.entity.EntityUser;
@@ -34,12 +35,11 @@ public class UserStorage implements IUserStorage {
             statement.setString(3, user.getFullName());
             statement.setObject(4, user.getDateOfBirth());
             statement.setObject(5, user.getCreateAt());
-            statement.setObject(6, user.getUserOrAdmin());
+            statement.setString(6, String.valueOf(user.getRole()));
             statement.executeQuery();
         } catch (SQLException e) {
             throw new RuntimeException("Запись в базу данных не произошла ",e);
         }
-
     }
 
     @Override

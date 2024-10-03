@@ -1,6 +1,7 @@
 package by.it_academy.jd2._107.service;
 
 /*import by.it_academy.jd2._107.dataBaseTemp.api.MessengerDB;*/
+import by.it_academy.jd2._107.dto.Role;
 import by.it_academy.jd2._107.dto.UserDTO;
 import by.it_academy.jd2._107.exceptions.DuplicateEntityException;
 import by.it_academy.jd2._107.service.api.IUserRegistrationService;
@@ -88,7 +89,7 @@ public class UserRegistrationService implements IUserRegistrationService {
             entityUser.setFullName(userDTO.getFullName());
             entityUser.setDateOfBirth(userDTO.getDateOfBirth());
             entityUser.setCreateAt(LocalDateTime.now());
-            entityUser.setUserOrAdmin(ROLE_USER);
+            entityUser.setRole(Role.USER);
             userStorage.create(entityUser);
        /* }*/
         }
