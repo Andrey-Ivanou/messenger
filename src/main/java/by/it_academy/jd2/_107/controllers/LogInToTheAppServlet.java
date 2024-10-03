@@ -80,11 +80,11 @@ public class LogInToTheAppServlet extends HttpServlet {
             login = getValueFromSession("login", session);
         }
 
-        if(password != null) {
-            saveAttribute("password", login, session);
+        /*if(password != null) {
+            saveAttribute("password", password, session);
         } else {
             password = getValueFromSession("password", session);
-        }
+        }*/
 
 
         /*Map<String, String> logPass = new HashMap<>();
