@@ -10,7 +10,7 @@
 
     <servlet>
         <servlet-name>UserReg</servlet-name>
-        <servlet-class>by.it_academy.jd2._107.controllers.UserRegistrationServlet</servlet-class>
+        <servlet-class>by.it_academy.jd2._107.controllers.servlet.UserRegistrationServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -20,7 +20,7 @@
 
     <servlet>
         <servlet-name>LogInApp</servlet-name>
-        <servlet-class>by.it_academy.jd2._107.controllers.LogInToTheAppServlet</servlet-class>
+        <servlet-class>by.it_academy.jd2._107.controllers.servlet.LogInToTheAppServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -30,7 +30,7 @@
 
     <servlet>
         <servlet-name>MessengerApp</servlet-name>
-        <servlet-class>by.it_academy.jd2._107.controllers.MessengerServlet</servlet-class>
+        <servlet-class>by.it_academy.jd2._107.controllers.servlet.MessengerServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
